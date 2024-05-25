@@ -32,5 +32,5 @@ vim.opt.equalalways = true
 vim.opt.colorcolumn = "+1"
 vim.opt.textwidth = 60
 
-vim.opt.showtabline = 2
+--vim.opt.showtabline = 2
 --vim.opt.sessionoptions = ""

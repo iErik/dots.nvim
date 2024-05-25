@@ -1,5 +1,6 @@
 return {
   {
+    enabled = false,
     "nanozuki/tabby.nvim",
     event = "VimEnter",
     dependencies = {

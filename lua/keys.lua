@@ -45,8 +45,6 @@ local utils = require 'utils'
 -- the last argument.
 --]
 
-utils.keymap('nit', '<C-n>', ':CHADopen<cr>') 
-
 -- -> Splits
 -- ---------
 
@@ -99,6 +97,12 @@ utils.keymap('ni', '<C-p>', ':+tabnext<cr>')
 utils.nmap('<C-[>', ':bprevious<CR>')
 utils.nmap('<C-]>', ':bnext<CR>')
 utils.nmap('<C-x>', ':bprevious\\|bdelete#<CR>')
+
+-- -> ChadTree keymaps
+-- -------------------
+
+utils.keymap('nit', '<C-n>', ':CHADopen<cr>') 
+
 
 -- -> Others
 -- ---------
