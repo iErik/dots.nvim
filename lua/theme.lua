@@ -2,7 +2,7 @@ local highlight = vim.cmd.highlight
 local autocmd   = vim.api.nvim_create_autocmd
 
 vim.opt.termguicolors = true
-vim.cmd("colorscheme evergarden")
+vim.cmd("colorscheme kanagawa")
 
 
 highlight({ "Comment",   "cterm=italic", "gui=italic" })

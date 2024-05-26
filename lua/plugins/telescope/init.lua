@@ -3,6 +3,10 @@ local mappings = require 'plugins.telescope.mappings'
 local config = {
   defaults = {
     mappings = mappings
+  },
+
+  pickers = {
+    colorscheme = { enable_preview = true }
   }
 }
 

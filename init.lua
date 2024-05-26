@@ -1,8 +1,7 @@
-require "bootstrap"
-require "plugins"
-
 require "options"
-require "keys"
-require "theme"
-require "autocmd"
+require "bootstrap"
 
+require "plugins"
+require "theme"
+require "keys"
+require "autocmd"
