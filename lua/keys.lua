@@ -89,20 +89,14 @@ utils.keymap('ni', '<C-Down>', ':resize -2<cr>')
 utils.keymap('ni', '<C-t>', ':tabnew<cr>')
 utils.keymap('ni', '<C-A-T>', ':tabc<cr>')
 utils.keymap('ni', '<C-o>', ':-tabnext<cr>')
-utils.keymap('ni', '<C-p>', ':+tabnext<cr>')
+utils.keymap('ni', '<C-p>', ':tabnext<cr>')
 
 -- -> Buffers
 -- ----------
 
 utils.nmap('<C-[>', ':bprevious<CR>')
 utils.nmap('<C-]>', ':bnext<CR>')
-utils.nmap('<C-x>', ':bprevious\\|bdelete#<CR>')
-
--- -> ChadTree keymaps
--- -------------------
-
-utils.keymap('nit', '<C-n>', ':CHADopen<cr>') 
-
+utils.nmap('<C-x>', ':bp|bd#<CR>')
 
 -- -> Others
 -- ---------

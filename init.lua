@@ -1,7 +1,8 @@
 require "bootstrap"
-require("lazy").setup("plugins")
+require "plugins"
 
 require "options"
 require "keys"
 require "theme"
+require "autocmd"
 

@@ -57,7 +57,7 @@ local theme = {
   --   "nerdtree_syntax_dark"
   -- ]
   --
-  text_colour_set = "nord",
+  text_colour_set = "env",
 
   -- Icon colours to use.
   -- One of: [ "github", "none" ]

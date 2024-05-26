@@ -23,10 +23,53 @@ local colorschemes = {
   },
 
   {
+    "samharju/synthweave.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
+  {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
+  {
+    "oxfist/night-owl.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require("night-owl").setup()
+    end
+  },
+
+  {
+    "slugbyte/lackluster.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {}
+  },
+
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
+  {
+    "ptdewey/darkearth-nvim",
+    priority = 1000
+  },
+
+  {
+    "loganswartz/sunburn.nvim",
+    dependencies = { { "loganswartz/polychrome.nvim" } }
   },
 
   {
@@ -39,7 +82,8 @@ local colorschemes = {
   "rafamadriz/neon",
   "tomasiser/vim-code-dark",
   "christianchiarulli/nvcode-color-schemes.vim",
-  "Mofiqul/vscode.nvim"
+  "Mofiqul/vscode.nvim",
+  "alexmozaidze/palenight.nvim"
 }
 
 return colorschemes

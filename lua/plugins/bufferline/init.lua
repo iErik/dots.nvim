@@ -24,7 +24,18 @@ local config = function (bl)
     show_buffer_close_icons = false,
     separator_style = "slope",
 
-    always_show_bufferline = true
+    always_show_bufferline = true,
+
+    offsets = {
+      {
+        filetype = "neo-tree",
+        raw = " %{%v:lua.__get_selector()%} ",
+        highlight = { sep = { link = "WinSeparator" } },
+        --separator = "|"
+        separator = true,
+        text_align = "center"
+      }
+    }
   }
 
   local highlights = {
@@ -35,6 +46,7 @@ local config = function (bl)
   return { options = options, highlights = highlights }
 end
 
+
 return {
   {
     "akinsho/bufferline.nvim",
@@ -43,6 +55,12 @@ return {
     config = function ()
       local bufferline = require 'bufferline'
       local options = config(bufferline)
+
+      -- NeoTree integration I guess?...
+      _G.__cached_neo_tree_selector = nil
+      _G.__get_selector = function ()
+        return _G.__cached_neo_tree_selector
+      end
 
       bufferline.setup(options)
     end

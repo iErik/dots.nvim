@@ -1,3 +1,5 @@
+local utils = require "utils"
+
 local keymap = {
   -- Close ChadTree window, quit if it is the last window
   quit = { "q" },
@@ -130,5 +132,10 @@ local keymap = {
   -- Toggle version control integration on and off
   toggle_version_control = { "i" }
 }
+
+-- -> ChadTree keymaps
+-- -------------------
+
+utils.keymap('nit', '<C-n>', ':CHADopen<cr>') 
 
 return keymap
