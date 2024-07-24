@@ -32,7 +32,7 @@ local config = {
 
     -- Character, or list of characters, that gets used to
     -- display the indentation guide for tabs. Each
-    -- character has to have a display width of 0 or 1 
+    -- character has to have a display width of 0 or 1
     tab_char = { '|', '¦', '┆', '┊' },
 
     -- Highlight group, or list of highlight groups, that
@@ -83,7 +83,7 @@ local config = {
     char = { '|', '¦', '┆', '┊' },
 
     -- Shows an underline on the first line of the scope
-    show_start = true,
+    show_start = false,
 
     -- Shows an underline on the last line of the scope
     show_end = true,

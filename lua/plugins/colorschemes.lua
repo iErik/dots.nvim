@@ -4,7 +4,7 @@ local colorschemes = {
     priority = 1000,
     lazy = false,
     config = function (_, opts)
-      require("witch").setup(opts)
+      --require("witch").setup(opts)
     end
   },
 
@@ -38,8 +38,8 @@ local colorschemes = {
     "oxfist/night-owl.nvim",
     lazy = false,
     priority = 1000,
-    config = function ()
-      require("night-owl").setup()
+    config = function (_, opts)
+      --require("night-owl").setup(opts)
     end
   },
 
@@ -143,7 +143,7 @@ local colorschemes = {
     lazy = false,
     priority = 1000,
     config = function ()
-      require("nordic").load()
+      --require("nordic").load()
     end
   },
 
@@ -166,6 +166,55 @@ local colorschemes = {
         theme = "dragon"
       })
     end
+  },
+
+  {
+    "EdenEast/nightfox.nvim",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
+  {
+    "eldritch-theme/eldritch.nvim",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
+    "olivercederborg/poimandres.nvim",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
+    "maxmx03/fluoromachine.nvim",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
+    "sainnhe/edge",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
+    "embark-theme/vim",
+    priority = 1000,
+    lazy = false,
+    as = "embark",
+  },
+
+  {
+    "shaunsingh/moonlight.nvim",
+    priority = 1000,
+    lazy = false,
   }
 }
 

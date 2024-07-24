@@ -2,15 +2,18 @@ local highlight = vim.cmd.highlight
 local autocmd   = vim.api.nvim_create_autocmd
 
 vim.opt.termguicolors = true
-vim.cmd("colorscheme kanagawa")
-
+--vim.cmd("colorscheme kanagawa")
+--vim.cmd("colorscheme xoria")
+--vim.cmd("colorscheme lackluster-mint")
+--vim.cmd("colorscheme evergarden")
+vim.cmd("colorscheme embark")
 
 highlight({ "Comment",   "cterm=italic", "gui=italic" })
 highlight({ "Normal",    "ctermbg=NONE" })
 highlight({ "NonText",   "ctermbg=NONE", "ctermfg=NONE" })
 highlight({ "Visual",    "ctermbg=NONE", "cterm=NONE" })
 highlight({ "LineNr",    "ctermbg=NONE" })
-highlight({ "VertSplit", "ctermbg=NONE", "ctermfg=NONE" })
+--highlight({ "VertSplit", "ctermbg=NONE", "ctermfg=NONE" })
 
 
 autocmd({ "vimenter", "ColorScheme" }, {
@@ -24,11 +27,11 @@ autocmd({ "vimenter", "ColorScheme" }, {
     highlight({ "LineNr",       unpack(noBg) })
     highlight({ "CocErrorSign", unpack(noBg) })
 
-    highlight({ "VertSplit",
-      "ctermbg=NONE",
-      "ctermfg=NONE",
-      "guibg=NONE"
-    })
+--    highlight({ "VertSplit",
+--      "ctermbg=NONE",
+--      "ctermfg=NONE",
+--      "guibg=NONE"
+--    })
 
   end
 })

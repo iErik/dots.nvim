@@ -95,13 +95,13 @@ local mappings = {
 -- --------------
 
 utils.keymap(
-  'nit',
+  'ni',
   '<C-n>',
-  ':Neotree filesystem reveal right toggle<CR>'
+  ':Neotree filesystem reveal left toggle<CR>'
 )
 
 utils.keymap(
-  'nit',
+  'ni',
   '<C-m>',
   ':Neotree buffers reveal left toggle<CR>'
 )

@@ -17,7 +17,7 @@ local packages = {
   require("plugins.fzf"),
   require("plugins.autopair"),
   require("plugins.indent-blankline"),
-
+  require("plugins.neomux"),
 
   require("plugins.colorschemes")
 }
