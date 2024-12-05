@@ -44,24 +44,29 @@ in {
 
     home.activation.nvimSetup = mkIf cfg.cloneConfig
       (entryAfter ["writeBoundary"] ''
-        export PATH=${pkgs.git}/bin:$PATH
         export PATH=${pkgs.openssh}/bin:$PATH
+        export PATH=${pkgs.git}/bin:$PATH
 
-	eval $(ssh-agent -s)
-	ssh-add ${homeDirectory}/.ssh/id_ed25519
+        eval $(ssh-agent -s)
+        ssh-add
 
-        rm -rf ${dotsDir}
-        rm -rf ${xdgConfDir}
+        if [ -d "${dotsDir}/.git" ];
+        then
+          cd ${dotsDir} && git pull origin master
+        else
+          rm -rf ${dotsDir}
+          rm -rf ${xdgConfDir}
 
-        git clone ${repoUrl} ${dotsDir}
+          git clone ${repoUrl} ${dotsDir}
 
-        chown -R ${username}:users ${dotsDir}
-        find ${dotsDir} -type d -exec chmod 744 {} \;
-        find  ${dotsDir} -type f -exec chmod 644 {} \;
+          chown -R ${username}:users ${dotsDir}
+          find ${dotsDir} -type d -exec chmod 744 {} \;
+          find  ${dotsDir} -type f -exec chmod 644 {} \;
 
-        ln -s ${dotsDir} ${xdgConfDir}
+          ln -s ${dotsDir} ${xdgConfDir}
+        fi
 
-	ssh-agent -k
+        ssh-agent -k
       '');
   };
 }
