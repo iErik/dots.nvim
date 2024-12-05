@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs }: {
     homeManagerModules = {
       default = self.homeManagerModules.dots;
-      dots = import ./nix/modules/default.nix self;
+      dots = import ./nix/default.nix self;
     };
   };
 }
