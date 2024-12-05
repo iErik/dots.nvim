@@ -57,5 +57,5 @@ in {
 
         ln -s ${dotsDir} ${xdgConfDir}
       '');
-  }
+  };
 }
