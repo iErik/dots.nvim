@@ -45,6 +45,7 @@ in {
     home.activation.nvimSetup = mkIf cfg.cloneConfig
       (entryAfter ["writeBoundary"] ''
         export PATH=${pkgs.git}/bin:$PATH
+        export PATH=${pkgs.openssh}/bin:$PATH
 
 	eval $(ssh-agent -s)
 	ssh-add ${homeDirectory}/.ssh/id_25529
