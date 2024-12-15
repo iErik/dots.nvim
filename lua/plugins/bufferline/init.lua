@@ -3,7 +3,7 @@ local config = function (bl)
     mode = "buffers",
     style_preset = bl.style_preset.default,
     --style_preset = bl.style_preset.minimal,
-    --themable = true,
+    themable = true,
 
     close_command = "bp|bd#",
 
@@ -17,7 +17,7 @@ local config = function (bl)
       style = 'underline',
     },
 
-    tab_size = 18,
+    tab_size = 24,
     color_icons = true,
     show_buffer_icons = true,
     show_close_icon = false,

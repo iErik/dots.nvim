@@ -6,9 +6,9 @@ local packages = {
 
   require("plugins.bufferline"),
   require("plugins.lualine"),
-  --require("plugins.tabby"),
+  require("plugins.tabby"),
 
-  --require("plugins.chadtree"),
+  require("plugins.chadtree"),
   require("plugins.neotree"),
 
   require("plugins.dashboard"),
