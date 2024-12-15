@@ -22,19 +22,8 @@ local mason = {
     -- ...
 }
 
-local masonlsp = {
-  ensure_installed = servers,
-
-  automatic_installation = true,
-
-  handlers = {
-    function (serverName)
-      require("lspconfig")[serverName].setup({})
-    end
-  }
-}
-
 return {
+  --[[
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x",
@@ -49,6 +38,7 @@ return {
       end)
     end
   },
+  --]]
 
   {
     "williamboman/mason.nvim",
@@ -58,13 +48,12 @@ return {
       require('mason').setup(mason)
     end
   },
-
   {
     "williamboman/mason-lspconfig.nvim",
     priority = 40,
     lazy = false,
     config = function ()
-      local lspzero = require("lsp-zero")
+      --local lspzero = require("lsp-zero")
 
       require("mason-lspconfig").setup({
         ensure_installed = servers,
@@ -72,7 +61,10 @@ return {
         automatic_installation = true,
 
         handlers = {
-          lspzero.default_setup
+          function(server_name)
+            require('lspconfig')[server_name].setup({})
+          end
+          --lspzero.default_setup
         }
       })
     end
@@ -81,10 +73,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
-    priority = 40
+    priority = 10,
+    config = function ()
+      --require('lspconfig').rust_analyzer.setup({ });
+    end
   },
 
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/nvim-cmp" },
   { "L3MON4D3/LuaSnip" },
+  { "slint-ui/vim-slint"}
 }
