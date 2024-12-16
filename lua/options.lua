@@ -2,7 +2,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.number = true
 vim.opt.laststatus = 2
-vim.opt.wrap = true	
+vim.opt.wrap = true
 vim.opt.re = 0
 
 vim.opt.tabstop = 2
@@ -31,6 +31,9 @@ vim.opt.equalalways = true
 
 vim.opt.colorcolumn = "+1"
 vim.opt.textwidth = 60
+
+vim.g.rustfmt_autosave_if_config_present = 1
+vim.g.rust_recommended_style = 0
 
 --vim.opt.showtabline = 2
 --vim.opt.sessionoptions = ""

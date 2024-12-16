@@ -53,7 +53,15 @@ local colorschemes = {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    opts = {}
+    opts = {},
+    config = function ()
+      require("tokyonight").setup({
+        style = "moon",
+        transparent = true,
+        terminal_colors = true,
+        lualine_bold = true
+      })
+    end
   },
 
   {
@@ -73,6 +81,19 @@ local colorschemes = {
     name = "catppuccin",
     priority = 1000,
     lazy = false,
+    config = function ()
+      require("catppuccin").setup({
+        flavor = "auto",
+        transparent_background = true,
+        show_end_of_buffer = true,
+        term_colors = true,
+        dim_inactive = {
+          enabled = false,
+          shade = "dark",
+          percentage = 0.15
+        }
+      })
+    end
   },
 
   {
@@ -153,7 +174,7 @@ local colorschemes = {
     priority = 1000,
     config = function ()
       require("kanagawa").setup({
-        compile = false,
+        compile = true,
         undercurl = true,
         commentStyle = { italic = true },
         functionStyle = {},
@@ -161,7 +182,7 @@ local colorschemes = {
         statementStyle = { bold = true },
         typeStyle = { },
         transparent = true,
-        dimInactive = true,
+        dimInactive = false,
         terminalColors = true,
         theme = "dragon"
       })
