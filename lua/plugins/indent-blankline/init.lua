@@ -159,6 +159,12 @@ return {
     opts = {},
     config = function ()
       require("ibl").setup(config)
+      local hooks = require "ibl.hooks"
+
+      hooks.register(
+        hooks.type.SCOPE_HIGHLIGHT,
+        hooks.builtin.scope_highlight_from_extmark
+      )
     end
   }
 }

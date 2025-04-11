@@ -1,4 +1,4 @@
-function line ()
+local function line ()
   -- Left section
   ---------------
   local line_a = {
@@ -45,7 +45,7 @@ function line ()
       "branch",
       icon = "",
       separator = { left = "", right = "" },
-      -- color = { fg = colors.fg, bg = colors.color4 },
+      --color = { fg = colors.fg, bg = colors.color4 },
     },
     -- Git diff (added/mod/removed)
     {
@@ -55,11 +55,40 @@ function line ()
       color = { bg = nil },
       symbols = {
         added = " ",
-        modified = " ",
-        removed = " "
+        modified = "  ",
+        removed = "  "
       },
       separator = { left = "", right = "" },
       padding = { left = 1, right = 1 }
+    },
+    -- LSP Diagnostics
+    {
+      "diagnostics",
+
+      diagnostics_color = {
+        error = 'DiagnosticError',
+        warn  = 'DiagnosticWarn',
+        info  = 'DiagnosticInfo',
+        hint  = 'DiagnosticHint',
+      },
+
+      symbols = {
+        --error = ' 󱗗 ',
+        --error = "  ",
+        --error = " 󱠇 ",
+        --error = " 󰈸 ",
+        error = "  ",
+        warn  = "  ",
+        info  = " 󰚽 ",
+        hint  = "  "
+      },
+
+      sources  = { "nvim_lsp" },
+      sections = { 'error', 'warn', 'hint' },
+      colored  = false,
+
+      update_in_insert = true,
+      always_visible   = true
     }
   }
 
