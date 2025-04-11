@@ -23,23 +23,6 @@ local mason = {
 }
 
 return {
-  --[[
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    priority = 20,
-    lazy = false,
-    config = function ()
-      local lspzero = require("lsp-zero")
-
-      lspzero.extend_lspconfig()
-      lspzero.on_attach(function (client, bufnr)
-        lspzero.default_keymaps({ buffer = bufnr })
-      end)
-    end
-  },
-  --]]
-
   {
     "williamboman/mason.nvim",
     priority = 25,
@@ -48,39 +31,88 @@ return {
       require('mason').setup(mason)
     end
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    priority = 40,
-    lazy = false,
-    config = function ()
-      --local lspzero = require("lsp-zero")
-
-      require("mason-lspconfig").setup({
-        ensure_installed = servers,
-
-        automatic_installation = true,
-
-        handlers = {
-          function(server_name)
-            require('lspconfig')[server_name].setup({})
-          end
-          --lspzero.default_setup
-        }
-      })
-    end
-  },
 
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     priority = 10,
     config = function ()
-      --require('lspconfig').rust_analyzer.setup({ });
+      require('lspconfig').slint_lsp.setup({})
+
+      require('lspconfig').rust_analyzer.setup({
+        settings = {
+          ['rust-analyzer'] = {
+            check = {
+              ignore = { "dead_code" }
+            },
+            diagnostics = {
+              enable = true,
+              disabled = { "unlinked-file" }
+            }
+          }
+        }
+      })
+
+      require("lspconfig").ols.setup({
+        init_options = {
+          checker_args = "",
+          collections = {
+            { name = "root", path = "src" }
+          }
+        }
+      })
+
+      require("lspconfig").lua_ls.setup({
+        on_init = function(client)
+          local path = client.workspace_folders[1].name
+
+          if vim.loop.fs_stat(path..'/.luarc.json') or
+             vim.loop.fs_stat(path..'/.luarc.jsonc') then
+            return
+          end
+
+          client.config.settings.Lua = vim.tbl_deep_extend(
+            'force', client.config.settings.Lua, {
+              runtime = { version = 'LuaJIT' },
+
+              -- Make the server aware of Neovim
+              -- runtime files
+              workspace = {
+                checkThirdParty = true,
+                library = {
+                  vim.env.VIMRUNTIME
+                  -- Depending on the usage, you might want
+                  -- to add additional paths here.
+                  -- "${3rd}/luv/library"
+                  -- "${3rd}/busted/library",
+                }
+              }
+          })
+        end,
+        settings = {
+          Lua = {}
+        }
+      })
     end
   },
 
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/nvim-cmp" },
-  { "L3MON4D3/LuaSnip" },
-  { "slint-ui/vim-slint"}
+
+  {
+    --"iErik/lsp_lines.nvim",
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    priority = 11,
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function ()
+      require("lsp_lines").setup()
+
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = { only_current_line = true }
+      })
+    end
+  }
+
+  --{ "L3MON4D3/LuaSnip" },
 }
