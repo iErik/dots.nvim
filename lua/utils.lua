@@ -7,7 +7,7 @@ utils.merge = function (...)
   for i = 1, select('#', ...) do
     if type(tables[i]) ~= 'table' then goto continue end
 
-    for _, v in pairs(tables[i]) do
+    for _, _ in pairs(tables[i]) do
       table.insert(merged, tables[i])
     end
 
@@ -20,14 +20,14 @@ end
 -- split("a,b,c", ",") => {"a", "b", "c"}
 utils.split = function (s, sep)
   local fields = {}
-    
+
   local pattern = sep and
     string.format("([^%s]+)", sep) or '.'
 
   string.gsub(s, pattern, function (c)
     table.insert(fields, c)
   end)
-  
+
   return fields
 end
 

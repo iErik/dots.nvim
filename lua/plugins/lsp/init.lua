@@ -38,6 +38,7 @@ return {
     priority = 10,
     config = function ()
       require('lspconfig').slint_lsp.setup({})
+      require('lspconfig').ts_ls.setup({})
 
       require('lspconfig').rust_analyzer.setup({
         settings = {
