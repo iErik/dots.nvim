@@ -15,6 +15,7 @@
   "direnv.vim": { "branch": "master", "commit": "ab2a7e08dd630060cd81d7946739ac7442a4f269" },
   "edge": { "branch": "master", "commit": "8eeab1bc9d93eec3511cb4d3c87d2d599c7ce3d4" },
   "eldritch.nvim": { "branch": "master", "commit": "adedead3423c58cc2e2ebf30001fe4055ad0e416" },
+  "emmet-vim": { "branch": "master", "commit": "e98397144982d1e75b20d94d55a82de3ec8f648d" },
   "ethereal.nvim": { "branch": "main", "commit": "03a943416898ec05a0f027ef801859b2d4b58eb1" },
   "evergarden": { "branch": "mega", "commit": "d74843aa373be2822b7eb934019a2f7f0375187a" },
   "flesh-and-blood": { "branch": "master", "commit": "1b6404557ec7dd82e5ba6ba8f11357951f2d6b38" },

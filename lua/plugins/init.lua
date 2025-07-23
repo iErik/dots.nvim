@@ -19,6 +19,7 @@ local packages = {
   require("plugins.autopair"),
   require("plugins.indent-blankline"),
   require("plugins.neomux"),
+  require("plugins.emmet"),
 
   require("plugins.colorschemes"),
   require("plugins.direnv")
