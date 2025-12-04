@@ -4,7 +4,8 @@ local autocmd   = vim.api.nvim_create_autocmd
 --vim.opt.termguicolors = true
 --vim.cmd("colorscheme sunset_cloud")
 --vim.cmd("colorscheme darkrose")
-vim.cmd("colorscheme crimson_moonlight")
+--vim.cmd("colorscheme crimson_moonlight")
+vim.cmd("colorscheme evergarden")
 --vim.cmd("colorscheme flesh-and-blood")
 --vim.cmd("colorscheme shado")
 --vim.cmd("colorscheme pinkish_day")

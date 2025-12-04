@@ -1,5 +1,38 @@
 local servers = require 'plugins.lsp.servers'
 
+vim.lsp.enable('lua_ls')
+vim.lsp.config('lua_ls', {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+
+    if vim.loop.fs_stat(path..'/.luarc.json') or
+       vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend(
+      'force', client.config.settings.Lua, {
+        runtime = { version = 'LuaJIT' },
+
+        -- Make the server aware of Neovim
+        -- runtime files
+        workspace = {
+          checkThirdParty = true,
+          library = {
+            vim.env.VIMRUNTIME
+            -- Depending on the usage, you might want
+            -- to add additional paths here.
+            -- "${3rd}/luv/library"
+            -- "${3rd}/busted/library",
+          }
+        }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+})
+
 local mason = {
   -- The directory in which to install packages
   --install_root_dir = path.concat {
@@ -37,14 +70,10 @@ return {
     lazy = false,
     priority = 10,
     config = function ()
-      vim.lsp.enable('slint_lsp')
-      vim.lsp.config('slint_lsp', { })
+      require('lspconfig').slint_lsp.setup({})
+      require('lspconfig').ts_ls.setup({})
 
-      vim.lsp.enable('ts_ls')
-      vim.lsp.config('ts_ls', {})
-
-      vim.lsp.enable('rust_analyzer')
-      vim.lsp.config('rust_analyzer', {
+      require('lspconfig').rust_analyzer.setup({
         settings = {
           ['rust-analyzer'] = {
             check = {
@@ -58,8 +87,7 @@ return {
         }
       })
 
-      vim.lsp.enable('ols')
-      vim.lsp.config('ols', {
+      require("lspconfig").ols.setup({
         init_options = {
           checker_args = "",
           collections = {
@@ -68,8 +96,7 @@ return {
         }
       })
 
-      vim.lsp.enable('lua_ls')
-      vim.lsp.config('lua_ls', {
+      require("lspconfig").lua_ls.setup({
         on_init = function(client)
           local path = client.workspace_folders[1].name
 
