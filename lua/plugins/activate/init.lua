@@ -1,4 +1,5 @@
 return {
+
   { -- Activate.nvim plugin for searching and managing
     -- plugins through Lazy.nvim
     "roobert/activate.nvim",
