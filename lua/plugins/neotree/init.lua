@@ -80,10 +80,19 @@ local componentConfigs = {
 }
 
 local window = {
-  position = "left",
+  position = "float",
   width = 40,
   mapping_options = { noremap = true, nowait = true },
   mappings = mappings
+}
+
+local buffers = {
+  window = {
+    mappings = {
+      ["D"] = "buffer_delete",
+      ["H"] = ""
+    }
+  }
 }
 
 local config = {
@@ -102,7 +111,8 @@ local config = {
 
   event_handlers = eventHandlers,
   default_component_configs = componentConfigs,
-  window = window
+  window = window,
+  buffers = buffers
 }
 
 return {

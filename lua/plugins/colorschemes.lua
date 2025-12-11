@@ -1,5 +1,233 @@
 local colorschemes = {
   {
+    "yashguptaz/calvera-dark.nvim",
+    lazy = false,
+    priority = 100,
+    config = function ()
+      vim.g.calvera_italic_keywords = false
+      vim.g.calvera_borders = true
+      vim.g.calvera_contrast = true
+      vim.g.calvera_hide_eob = true
+      --vim.g.calvera_custom_colors = {contrast = "#0f111a"}
+    end
+  },
+
+  {
+    "kevinm6/kurayami.nvim",
+    lazy = false,
+    priority = 100,
+  },
+
+  {
+    "b0o/lavi.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+    lazy = false,
+    priority = 100,
+  },
+
+  {
+    "cryptomilk/nightcity.nvim",
+    lazy = false,
+    priority = 100,
+    config = function ()
+      require("nightcity").setup({
+        -- kabuki or afterlife
+        style = "afterlife",
+        terminal_colors = true,
+        invert_colors = {
+          -- Invert colors for the following syntax groups
+          cursor = true,
+          diff = true,
+          error = true,
+          search = true,
+          selection = false,
+          signs = false,
+          statusline = true,
+          tabline = false,
+        },
+        font_style = {
+          -- Style to be applied to different syntax groups
+          comments = { italic = true },
+          keywords = { italic = true },
+          functions = { bold = true },
+          variables = {},
+          search = { bold = true },
+        },
+        -- Plugin integrations. Use `default = false`
+        -- to disable all integrations.
+        plugins = { default = true },
+
+        --- You can override specific highlights to use
+        --- other groups or a hex color function will be
+        --- called with a Highlights and ColorScheme table
+        ---@param groups Highlight groups
+        ---@param colors ColorScheme
+        --on_highlights = function(groups, colors) end,
+      })
+    end
+  },
+
+  {
+    "Yazeed1s/minimal.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "ficcdaf/ashen.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  { -- Broken, sadly
+    "ray-x/starry.nvim",
+    enabled = false,
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "0xstepit/flow.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "ramojus/mellifluous.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "mellow-theme/mellow.nvim",
+    lazy = false,
+    priority = 100
+  },
+
+  {
+    "Shadorain/shadotheme",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "eddyekofo94/gruvbox-flat.nvim",
+    priority = 1000,
+    enabled = true,
+    lazy = false,
+  },
+
+  {
+    "kanenorman/gruvbox-darker.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "presindent/ethereal.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      palette = 1,
+      transparent_background = true,
+      gamma = 1.00,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = true },
+        identifiers = { italic = true },
+        functions = {},
+        variables = {},
+      },
+      terminal_colors = true
+    }
+  },
+
+  {
+    "Sly-Harvey/radium.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "mustardfrog/pinkish_day",
+    lazy = false,
+    priority = 1000,
+    dependencies = { "rktjmp/lush.nvim" }
+  },
+
+  {
+    "sainttttt/flesh-and-blood",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "Koalhack/koalight.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "water-sucks/darkrose.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require("darkrose").setup({
+        styles = {
+          bold = true,
+          italic = true,
+          underline = true
+        }
+      })
+    end
+  },
+
+  {
+    "Yazeed1s/oh-lucy.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "rockerBOO/boo-colorscheme-nvim",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require("boo-colorscheme").setup({
+        italic = true
+      })
+    end
+  },
+
+  {
+    "frenzyexists/aquarium-vim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "glepnir/zephyr-nvim",
+    lazy = false,
+    priority = 1000,
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      opt = true
+    }
+  },
+
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    priority = 1000,
+    lazy = false
+  },
+
+  {
     "sontungexpt/witch",
     priority = 1000,
     lazy = false,
@@ -114,7 +342,10 @@ local colorschemes = {
     "comfysage/evergarden",
     priority = 1000,
     lazy = false,
-    opts = {}
+    opts = {
+      transparent_background = true,
+      variant = "hard"
+    }
   },
 
   {
