@@ -8,8 +8,8 @@ vim.opt.termguicolors = true
 --vim.cmd("colorscheme evergarden")
 --vim.cmd("colorscheme embark")
 --vim.cmd("colorscheme catppuccin-frappe")
---vim.cmd("colorscheme nightfly")
-vim.cmd("colorscheme tokyonight-moon")
+vim.cmd("colorscheme nightfly")
+--vim.cmd("colorscheme tokyonight-moon")
 
 highlight({ "Comment",   "cterm=italic", "gui=italic" })
 highlight({ "Normal",    "ctermbg=NONE" })
