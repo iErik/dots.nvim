@@ -49,54 +49,54 @@ local utils = require 'utils'
 -- ---------
 
 -- Split Navigation
-utils.keymap('ni', '<C-h>', '<C-w>h')
-utils.keymap('ni', '<C-j>', '<C-w>j')
-utils.keymap('ni', '<C-k>', '<C-w>k')
-utils.keymap('ni', '<C-l>', '<C-w>l')
+utils.keymap('tni', '<C-h>', '<C-w>h')
+utils.keymap('tni', '<C-j>', '<C-w>j')
+utils.keymap('tni', '<C-k>', '<C-w>k')
+utils.keymap('tni', '<C-l>', '<C-w>l')
 
 -- Split Creation/Deletion
-utils.keymap('ni', '<C-\\>', '<C-w>v')
-utils.keymap('ni', '<C-->', '<C-w>s')
-utils.keymap('ni', '<C-q>', '<C-w>q')
+utils.keymap('tni', '<C-\\>', '<C-w>v')
+utils.keymap('tni', '<C-->', '<C-w>s')
+utils.keymap('tni', '<C-q>', '<C-w>q')
 -- close other splits
-utils.keymap('ni', '<C-\'>', ':only<cr>')
+utils.keymap('tni', '<C-\'>', ':only<cr>')
 
 -- Move Split to direction X
-utils.keymap('ni', '<C-A-h>', '<C-w>H')
-utils.keymap('ni', '<C-A-j>', '<C-w>J')
-utils.keymap('ni', '<C-A-l>', '<C-w>L')
-utils.keymap('ni', '<C-A-k>', '<C-w>K')
+utils.keymap('tni', '<C-A-h>', '<C-w>H')
+utils.keymap('tni', '<C-A-j>', '<C-w>J')
+utils.keymap('tni', '<C-A-l>', '<C-w>L')
+utils.keymap('tni', '<C-A-k>', '<C-w>K')
 -- swap window
-utils.keymap('ni', '<C-A-;>', '<C-w>x')
+utils.keymap('tni', '<C-A-;>', '<C-w>x')
 
 -- Window resizing
-utils.keymap('ni', '<C-=>', '<C-w>=')
-utils.keymap('ni', '<C-A-\\>', '<C-w>|')
+utils.keymap('tni', '<C-=>', '<C-w>=')
+utils.keymap('tni', '<C-A-\\>', '<C-w>|')
 
 --utils.keymap('ni', '<A-S-[>', ':vertical resize -2<cr>')
 --utils.keymap('ni', '<A-S-]>', ':vertical resize +2<cr>')
 --utils.keymap('ni', '<C-A-[>', ':resize +2<cr>')
 --utils.keymap('ni', '<C-A-]>', ':resize -2<cr>')
 
-utils.keymap('ni', '<C-Left>', ':vertical resize -2<cr>')
-utils.keymap('ni', '<C-Right>', ':vertical resize +2<cr>')
-utils.keymap('ni', '<C-Up>', ':resize +2<cr>')
-utils.keymap('ni', '<C-Down>', ':resize -2<cr>')
+utils.keymap('tni', '<C-Left>', ':vertical resize -2<cr>')
+utils.keymap('tni', '<C-Right>', ':vertical resize +2<cr>')
+utils.keymap('tni', '<C-Up>', ':resize +2<cr>')
+utils.keymap('tni', '<C-Down>', ':resize -2<cr>')
 
 -- -> Tabs
 -- -------
 
-utils.keymap('ni', '<C-t>', ':tabnew<cr>')
-utils.keymap('ni', '<C-A-T>', ':tabc<cr>')
-utils.keymap('ni', '<C-S-o>', ':-tabnext<cr>')
-utils.keymap('ni', '<C-S-p>', ':tabnext<cr>')
+utils.keymap('tni', '<C-t>', ':tabnew<cr>')
+utils.keymap('tni', '<C-A-T>', ':tabc<cr>')
+utils.keymap('tni', '<C-S-o>', ':-tabnext<cr>')
+utils.keymap('tni', '<C-S-p>', ':tabnext<cr>')
 
 -- -> Buffers
 -- ----------
 
-utils.nmap('<C-[>', ':bprevious<CR>')
-utils.nmap('<C-]>', ':bnext<CR>')
-utils.nmap('<C-x>', ':bp|bd#<CR>')
+utils.keymap('tn', '<C-[>', ':bprevious<CR>')
+utils.keymap('tn', '<C-]>', ':bnext<CR>')
+utils.keymap('tn', '<C-x>', ':bp|bd#<CR>')
 
 -- -> Others
 -- ---------
