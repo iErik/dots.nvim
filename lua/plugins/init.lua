@@ -1,14 +1,15 @@
 local packages = {
+  require("plugins.web-devicons"),
   require("plugins.lsp"),
   require("plugins.telescope"),
   require("plugins.treesitter"),
-  require("plugins.web-devicons"),
 
-  require("plugins.bufferline"),
+  --require("plugins.bufferline"),
+  require("plugins.incline"),
   require("plugins.lualine"),
   require("plugins.tabby"),
 
-  require("plugins.chadtree"),
+  --require("plugins.chadtree"),
   require("plugins.neotree"),
 
   require("plugins.dashboard"),
@@ -18,8 +19,10 @@ local packages = {
   require("plugins.autopair"),
   require("plugins.indent-blankline"),
   require("plugins.neomux"),
+  require("plugins.emmet"),
 
-  require("plugins.colorschemes")
+  require("plugins.colorschemes"),
+  require("plugins.direnv")
 }
 
 require("lazy").setup(packages)
