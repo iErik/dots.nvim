@@ -75,12 +75,68 @@ return {
     lazy = false,
     priority = 10,
     config = function ()
-      --require('lspconfig').rust_analyzer.setup({ });
+      vim.lsp.enable('slint_lsp')
+      vim.lsp.enable('ts_ls')
+      --require('lspconfig').slint_lsp.setup({})
+      --require('lspconfig').ts_ls.setup({})
+
+      vim.lsp.enable('rust_analyzer')
+      vim.lsp.config['rust_analyzer'] = {
+        settings = {
+          ['rust-analyzer'] = {
+            check = {
+              ignore = { "dead_code" }
+            },
+            diagnostics = {
+              enable = true,
+              disabled = { "unlinked-file" }
+            }
+          }
+        }
+      }
+
+      vim.lsp.enable('ols')
+      vim.lsp.config['ols'] = {
+        init_options = {
+          checker_args = "",
+          collections = {
+            { name = "root", path = "src" }
+          }
+        }
+      }
+
+      vim.lsp.enable('lua_ls')
+      vim.lsp.config['lua_ls'] = {
+        on_init = function(client)
+          local path = client.workspace_folders[1].name
+
+          if vim.loop.fs_stat(path..'/.luarc.json') or
+             vim.loop.fs_stat(path..'/.luarc.jsonc') then
+            return
+          end
+
+          client.config.settings.Lua = vim.tbl_deep_extend(
+            'force', client.config.settings.Lua, {
+              runtime = { version = 'LuaJIT' },
+
+              -- Make the server aware of Neovim
+              -- runtime files
+              workspace = {
+                checkThirdParty = true,
+                library = {
+                  vim.env.VIMRUNTIME
+                  -- Depending on the usage, you might want
+                  -- to add additional paths here.
+                  -- "${3rd}/luv/library"
+                  -- "${3rd}/busted/library",
+                }
+              }
+          })
+        end,
+        settings = {
+          Lua = {}
+        }
+      }
     end
   },
-
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/nvim-cmp" },
-  { "L3MON4D3/LuaSnip" },
-  { "slint-ui/vim-slint"}
 }

@@ -103,3 +103,5 @@ utils.nmap('<C-x>', ':bp|bd#<CR>')
 
 -- Map JJ to <Esc>
 utils.imap('jj', '<ESC>')
+
+utils.keymap('tni', '<C-Space>', require("lsp_lines").toggle)
