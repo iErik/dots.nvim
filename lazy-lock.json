@@ -75,8 +75,11 @@
   "synthweave.nvim": { "branch": "master", "commit": "0520bc260674745cdd3b5465f322de5731217dc6" },
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
   "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "c2f5910074103705661e9651aa841e0d7eea9932" },
   "vim": { "branch": "main", "commit": "7014644e25d5cebcb3e70a079804c44ec14d8e46" },
   "vim-code-dark": { "branch": "master", "commit": "4624dc223bf574aa9a731c2383c579847303c380" },
+  "vim-lsp": { "branch": "master", "commit": "cdd07e0ef79949c65a182eab2f2120c9e91c25aa" },
+  "vim-lsp-settings": { "branch": "master", "commit": "3894b738f55c6893d71c2aaf8fc2e8b4c535e0f9" },
   "vscode.nvim": { "branch": "main", "commit": "aa1102a7e15195c9cca22730b09224a7f7745ba8" },
   "witch": { "branch": "main", "commit": "b943dd5397b7fd0216d7143f16a3a202ff64b5d3" },
   "zephyr-nvim": { "branch": "main", "commit": "7fd86b7164442d3b5ec2c81b2694d040e716b5cf" }
