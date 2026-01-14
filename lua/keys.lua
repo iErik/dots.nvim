@@ -105,3 +105,5 @@ utils.keymap('tn', '<C-x>', ':bp|bd#<CR>')
 utils.imap('jj', '<ESC>')
 
 utils.keymap('tni', '<C-Space>', require("lsp_lines").toggle)
+
+utils.keymap('tni', '<C-,>', ':ClaudeCode<CR>')
