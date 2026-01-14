@@ -22,7 +22,9 @@ local packages = {
   require("plugins.emmet"),
 
   require("plugins.colorschemes"),
-  require("plugins.direnv")
+  require("plugins.direnv"),
+  require("plugins.claude"),
+  require("plugins.eslint"),
 }
 
 require("lazy").setup(packages)
