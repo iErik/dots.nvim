@@ -37,34 +37,9 @@ return {
     lazy = false,
     priority = 10,
     config = function ()
-      --local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
-
       local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
       vim.lsp.enable('slint_lsp')
-      --vim.lsp.enable('ts_ls')
-      --[[
-      vim.lsp.config['ts_ls'] = {
-        filetypes = {
-          'typescript',
-          'javascript',
-          'javascriptreact',
-          'typescriptreact',
-          'vue'
-        },
-        init_options = {
-          plugins = {
-            {
-              name = '@vue/typescript-plugin',
-              location = vue_language_server_path,
-              languages = { 'vue' },
-              configNamespace = 'typescript'
-            }
-          }
-        }
-      }
-      --]]
-
       vim.lsp.enable('vtsls')
       vim.lsp.config('vtsls', {
         settings = {
@@ -94,13 +69,7 @@ return {
       vim.lsp.config('vue_ls', {
         on_init = function(client)
           client.handlers['tsserver/request'] = function(_, result, context)
-            --local ts_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'ts_ls' })
-            --local vtsls_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'vtsls' })
-            --local clients = {}
             local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'vtsls' })
-
-            --vim.list_extend(clients, ts_clients)
-            --vim.list_extend(clients, vtsls_clients)
 
             if #clients == 0 then
               vim.notify('Could not find `vtsls` or `ts_ls` lsp client, `vue_ls` would not work without it.', vim.log.levels.ERROR)

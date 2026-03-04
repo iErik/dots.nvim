@@ -1,4 +1,5 @@
 local packages = {
+  require("plugins.langs"),
   require("plugins.web-devicons"),
   require("plugins.lsp"),
   require("plugins.telescope"),
