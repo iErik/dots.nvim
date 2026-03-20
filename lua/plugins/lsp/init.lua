@@ -70,10 +70,13 @@ return {
     lazy = false,
     priority = 10,
     config = function ()
-      require('lspconfig').slint_lsp.setup({})
-      require('lspconfig').ts_ls.setup({})
+      vim.lsp.enable('slint_lsp')
+      vim.lsp.enable('ts_ls')
+      --require('lspconfig').slint_lsp.setup({})
+      --require('lspconfig').ts_ls.setup({})
 
-      require('lspconfig').rust_analyzer.setup({
+      vim.lsp.enable('rust_analyzer')
+      vim.lsp.config['rust_analyzer'] = {
         settings = {
           ['rust-analyzer'] = {
             check = {
@@ -85,18 +88,20 @@ return {
             }
           }
         }
-      })
+      }
 
-      require("lspconfig").ols.setup({
+      vim.lsp.enable('ols')
+      vim.lsp.config['ols'] = {
         init_options = {
           checker_args = "",
           collections = {
             { name = "root", path = "src" }
           }
         }
-      })
+      }
 
-      require("lspconfig").lua_ls.setup({
+      vim.lsp.enable('lua_ls')
+      vim.lsp.config['lua_ls'] = {
         on_init = function(client)
           local path = client.workspace_folders[1].name
 
@@ -126,7 +131,7 @@ return {
         settings = {
           Lua = {}
         }
-      })
+      }
     end
   },
 
